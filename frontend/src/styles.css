@@ -1,0 +1,270 @@
+:root {
+  --bg0: #0f1c1a;
+  --bg1: #17302b;
+  --bg2: #1f3d36;
+  --ink: #f2f4ef;
+  --muted: #a7b5ae;
+  --accent: #d8a23a;
+  --accent-ink: #1a1405;
+  --ok: #6fbf8a;
+  --err: #e07a6a;
+  --line: rgba(242, 244, 239, 0.12);
+  --serif: "Instrument Serif", Georgia, serif;
+  --sans: "DM Sans", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #2a5549 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #3a4d2a 0%, transparent 50%),
+    linear-gradient(160deg, var(--bg0), var(--bg1) 45%, var(--bg2));
+  background-attachment: fixed;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: end;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  animation: rise 500ms ease-out both;
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  color: var(--ink);
+  line-height: 1;
+  text-decoration: none;
+}
+
+.brand:hover {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.tagline {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.user-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.user-switcher select {
+  font: inherit;
+  color: var(--ink);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.4rem 0.55rem;
+}
+
+.main {
+  padding-top: 1.75rem;
+  animation: rise 600ms ease-out 80ms both;
+}
+
+.page h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+}
+
+.lede {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  max-width: 42rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 2rem 0 0.75rem;
+}
+
+.meta,
+.muted,
+.when,
+.capacity,
+.crumb {
+  color: var(--muted);
+}
+
+.event-list,
+.session-list,
+.booking-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.event-row,
+.session-row,
+.booking-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+  animation: rise 450ms ease-out both;
+}
+
+.event-row h2,
+.booking-row h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+}
+
+.event-row p,
+.booking-row p,
+.session-row p {
+  margin: 0.2rem 0;
+}
+
+.btn {
+  appearance: none;
+  border: none;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: inherit;
+  font-weight: 700;
+  padding: 0.55rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+.btn:hover:not(:disabled) {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.banner {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin: 0 0 1rem;
+}
+
+.banner.error {
+  background: rgba(224, 122, 106, 0.15);
+  color: #ffd2ca;
+}
+
+.banner.ok {
+  background: rgba(111, 191, 138, 0.15);
+  color: #c9f0d6;
+}
+
+.status {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status-confirmed {
+  color: var(--ok);
+}
+
+.status-cancelled {
+  color: var(--err);
+}
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .event-row,
+  .session-row,
+  .booking-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

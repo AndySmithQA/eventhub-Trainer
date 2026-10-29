@@ -1,0 +1,22 @@
+{
+  "name": "eventhub",
+  "private": true,
+  "version": "1.0.0",
+  "description": "EventHub — Day 4 starter: individual event booking (groups & waitlists intentionally missing)",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,ui -c blue,green \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "test": "npm run test -w backend",
+    "seed": "npm run seed -w backend",
+    "build": "npm run build -w backend && npm run build -w frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
