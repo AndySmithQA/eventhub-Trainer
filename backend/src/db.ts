@@ -47,9 +47,6 @@ export function migrate(db: Db): void {
       capacity INTEGER NOT NULL CHECK (capacity >= 0)
     );
 
-    -- Individual booking only (one seat per booking row).
-    -- TODO(challenge): group bookings — party size / attendee list; keep groups together.
-    -- TODO(challenge): waitlists — queue when capacity insufficient; auto-promote on cancel.
     CREATE TABLE IF NOT EXISTS bookings (
       id TEXT PRIMARY KEY,
       session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,

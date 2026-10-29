@@ -1,8 +1,6 @@
-# EventHub (Day 4 starter)
+# EventHub
 
-Working **individual** event booking app for YouView / QA training.
-
-Delegates inherit this product and extend it with **group bookings** and **waitlists**. Those features are intentionally absent — leave the TODOs alone until the challenge brief says otherwise.
+Working event booking app. Browse sessions, see remaining places, book a seat, and cancel.
 
 ## What works today
 
@@ -48,7 +46,7 @@ npm run seed
 npm test
 ```
 
-Backend Vitest suite (**40 tests**) covers capacity, booking, cancel, duplicates, overbooking, and seed integrity. Treat failures as regression bait when adding groups/waitlists.
+Backend Vitest suite (**40 tests**) covers capacity, booking, cancel, duplicates, overbooking, and seed integrity.
 
 ## Domain model
 
@@ -66,16 +64,6 @@ User ──< Booking >── Session >── Event
 
 Cancelled bookings do not consume capacity.
 
-## Intentionally missing
-
-| Capability | Starter stance |
-| --- | --- |
-| Group bookings | TODO comments only — no party size / partial allocation |
-| Waitlists | TODO comments only — no queue or auto-promotion |
-| Waitlist explainability | Out of scope until teams design it |
-
-Do **not** add partial implementations that spoil the challenge.
-
 ## Project layout
 
 ```
@@ -86,5 +74,4 @@ data/        SQLite file (generated)
 
 ## Docs
 
-- `USER_GUIDE.md` — delegate walkthrough
-- `FACILITATOR.md` — trainer notes (do not hand to delegates as the brief)
+- `USER_GUIDE.md` — how to run and use the app

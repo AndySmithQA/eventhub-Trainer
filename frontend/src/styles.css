@@ -236,14 +236,6 @@ a:hover {
   color: var(--err);
 }
 
-.footer {
-  margin-top: 3rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
 @keyframes rise {
   from {
     opacity: 0;

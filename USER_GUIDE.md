@@ -49,8 +49,4 @@ npm run seed
 npm test
 ```
 
-Existing tests lock **individual** booking rules. Keep them green while you add group/waitlist behaviour (extend or add tests — do not delete coverage of current behaviour without reason).
-
-## Challenge boundary
-
-You will be asked to add **group bookings** and **waitlists**. The starter only supports individual bookings. Search the codebase for `TODO(challenge)` for hooks — do not invent stakeholder answers; use **CLARIFY** when rules are ambiguous.
+Existing tests lock the current booking rules. Keep them green if you change behaviour: extend or add tests, and do not drop coverage of current behaviour without a reason.

@@ -28,7 +28,7 @@ Micro learning journey (design team → implement roles → connect handoffs →
 - React → Node → SQLite; `npm install` && `npm run dev`
 - Seeded events/sessions with varied capacity and existing bookings
 - 40 automated tests as regression bait
-- Explicit TODOs for groups/waitlists — **no** partial implementations
+- No solution comments, TODOs, or partial implementations of the challenge features
 
 ## Ambiguities — do not pre-answer
 

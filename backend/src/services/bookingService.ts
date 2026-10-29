@@ -85,12 +85,7 @@ export function getSessionWithCapacity(
   };
 }
 
-/**
- * Create an individual (1-seat) confirmed booking.
- *
- * TODO(challenge): accept partySize / attendeeIds for group bookings.
- * TODO(challenge): if insufficient capacity, offer waitlist instead of FULL.
- */
+/** Create a confirmed booking for one seat. */
 export function createBooking(
   db: Db,
   sessionId: string,
@@ -122,7 +117,6 @@ export function createBooking(
   }
 
   if (!hasCapacity(db, sessionId, 1)) {
-    // TODO(challenge): join waitlist when full / partial group fit fails.
     throw new BookingError("Session is fully booked", "FULL");
   }
 
@@ -148,12 +142,7 @@ export function createBooking(
   return booking;
 }
 
-/**
- * Cancel a confirmed booking and free one place.
- *
- * TODO(challenge): after cancel, evaluate waitlist and auto-promote
- * (fairness / fit rules are a stakeholder CLARIFY topic — do not hard-code answers).
- */
+/** Cancel a confirmed booking and free one place. */
 export function cancelBooking(db: Db, bookingId: string): Booking {
   const row = db
     .prepare(
@@ -173,9 +162,6 @@ export function cancelBooking(db: Db, bookingId: string): Booking {
   db.prepare(`UPDATE bookings SET status = 'cancelled' WHERE id = ?`).run(
     bookingId
   );
-
-  // Capacity is freed by status change (confirmed count drops).
-  // TODO(challenge): trigger waitlist promotion here.
 
   return {
     ...mapBooking(row),

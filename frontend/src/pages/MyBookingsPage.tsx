@@ -31,7 +31,6 @@ export function MyBookingsPage({ user }: { user: User }) {
     setError(null);
     setMessage(null);
     try {
-      // TODO(challenge): after cancel, waitlist promotion may free/allocate places.
       await api.cancelBooking(bookingId);
       setMessage("Booking cancelled.");
       load();

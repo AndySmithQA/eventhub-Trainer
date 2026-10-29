@@ -1,11 +1,8 @@
 import type { Db } from "../db.js";
 
 /**
- * Confirmed bookings consume one place each (individual booking model).
+ * Confirmed bookings consume one place each.
  * remaining = capacity - confirmedCount
- *
- * TODO(challenge): when group bookings exist, capacity must account for party size.
- * TODO(challenge): waitlist entries must not consume capacity until promoted.
  */
 export function countConfirmedBookings(db: Db, sessionId: string): number {
   const row = db

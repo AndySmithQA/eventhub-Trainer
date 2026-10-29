@@ -34,8 +34,6 @@ export function EventDetailPage({ user }: { user: User }) {
     setError(null);
     setMessage(null);
     try {
-      // Individual seat only.
-      // TODO(challenge): collect party size / waitlist preference here.
       await api.createBooking(sessionId, user.id);
       setMessage("Booking confirmed.");
       load();
@@ -89,7 +87,6 @@ export function EventDetailPage({ user }: { user: User }) {
                     ? "Booking…"
                     : "Book place"}
               </button>
-              {/* TODO(challenge): when full, offer "Join waitlist" instead of disabled Full. */}
             </li>
           );
         })}

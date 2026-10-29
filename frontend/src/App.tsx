@@ -95,13 +95,6 @@ export function App() {
         </Routes>
       </main>
 
-      <footer className="footer">
-        <p>
-          Individual bookings only.{" "}
-          {/* TODO(challenge): group bookings + waitlists — intentionally not built. */}
-          Group bookings and waitlists are out of scope for this starter.
-        </p>
-      </footer>
     </div>
   );
 }

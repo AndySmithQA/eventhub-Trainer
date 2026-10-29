@@ -95,9 +95,6 @@ export function createApp(db: Db): Express {
       });
       return;
     }
-    // Individual booking only — one seat.
-    // TODO(challenge): accept partySize / attendees for group bookings.
-    // TODO(challenge): waitlist when capacity insufficient.
     try {
       const booking = createBooking(db, sessionId, userId);
       res.status(201).json(booking);

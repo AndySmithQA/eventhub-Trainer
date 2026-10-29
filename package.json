@@ -2,7 +2,7 @@
   "name": "eventhub",
   "private": true,
   "version": "1.0.0",
-  "description": "EventHub — Day 4 starter: individual event booking (groups & waitlists intentionally missing)",
+  "description": "EventHub — event booking",
   "workspaces": [
     "backend",
     "frontend"
