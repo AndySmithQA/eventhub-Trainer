@@ -32,9 +32,9 @@ npm run dev
 - UI: http://localhost:5173  
 - API: http://localhost:4000  
 
-On first API start, SQLite is created and seeded at `data/eventhub.db`.
+On first API start, SQLite is created and seeded at `data/eventhub.db` inside this clone. `npm run seed` creates that `data/` folder on your machine if it is missing, then writes the database. The file is gitignored, so each clone keeps its own copy.
 
-Re-seed (wipes local DB):
+Re-seed (wipes this clone's database):
 
 ```bash
 npm run seed
@@ -69,7 +69,7 @@ Cancelled bookings do not consume capacity.
 ```
 backend/     Express API, SQLite, seed, Vitest
 frontend/    React UI
-data/        SQLite file (generated)
+data/        local SQLite file, created by seed or first API start (gitignored)
 ```
 
 ## Docs

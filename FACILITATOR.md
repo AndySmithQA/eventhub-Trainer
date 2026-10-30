@@ -26,6 +26,7 @@ Micro learning journey (design team → implement roles → connect handoffs →
 
 - Working individual booking (browse, capacity, book, cancel, my bookings)
 - React → Node → SQLite; `npm install` && `npm run dev`
+- Each clone creates its own `data/eventhub.db` on first API start or `npm run seed`. The file is gitignored and is not shared between delegates or with the trainer repo.
 - Seeded events/sessions with varied capacity and existing bookings
 - 40 automated tests as regression bait
 - No solution comments, TODOs, or partial implementations of the challenge features

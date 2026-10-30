@@ -9,6 +9,8 @@ npm run dev
 
 Open http://localhost:5173. The API runs on port 4000; the Vite dev server proxies `/api`.
 
+The first start creates `data/eventhub.db` inside this clone and fills it with demo events and bookings. That file stays on your machine.
+
 ## Demo users
 
 Use **Acting as** in the header to switch seeded users (Alice, Ben, Cara, Diego, Elena, Farah). There is no login — this is a training demo.
@@ -37,7 +39,7 @@ On **My bookings**, cancel a confirmed booking. Capacity on that session increas
 | Tiny panel slot | Fully booked |
 | Workshop B | Open (one historical cancelled booking only) |
 
-Re-seed after experiments:
+Re-seed after experiments. This creates `data/` in your clone if it is missing, then replaces `data/eventhub.db`. That database stays on your machine and is not committed.
 
 ```bash
 npm run seed

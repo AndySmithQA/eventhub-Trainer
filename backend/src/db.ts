@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export type Db = DatabaseSync;
 
 export function defaultDbPath(): string {
-  return path.resolve(__dirname, "../../../data/eventhub.db");
+  return path.resolve(__dirname, "../../data/eventhub.db");
 }
 
 export function openDatabase(dbPath: string = defaultDbPath()): Db {
